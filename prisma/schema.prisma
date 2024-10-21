@@ -1,0 +1,26 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Dekra_finance{
+  id        Int      @default(autoincrement()) @id
+  Dekra_cash Int @default(0)
+  Dekra_usd Int @default(0)
+  Dekra_usdt Int @default(0)
+  A109_cash  Int @default(0)
+  A109_cashless Int @default(0)
+  Dbt Json
+  Date DateTime @default(dbgenerated("NOW()"))
+  Caption Int?
+}
