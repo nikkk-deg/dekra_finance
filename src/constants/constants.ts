@@ -36,7 +36,7 @@ export const TG_BUTTONS = {
   MINUS: '-',
   SHOW_BALANCE: 'Показать баланс',
   CHANGE_BALANCE: 'Изменить баланс',
-  DEKRA: 'Dekra',
+  DEKRA: 'Изменить Dekra',
   CHANGE_DEBT: 'Изменить долг',
   CHANGE_A109: 'Изменить А109',
   ADD_DEBT: 'Добавить долг',
