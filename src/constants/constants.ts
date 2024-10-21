@@ -47,3 +47,7 @@ export const TG_BUTTONS = {
   CHANGE: 'Изменить',
   YES_CHANGE: 'Да, изменить',
 };
+
+export interface Debt {
+  [name: string]: number;
+}
