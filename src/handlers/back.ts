@@ -32,7 +32,11 @@ export const handlerBackButton = async (ctx: Context) => {
       break;
     }
     case 'menu7':
-    case 'menu10': {
+    case 'menu10':
+    case 'menu11':
+    case 'menu12':
+    case 'menu13': {
+      ctx.deleteMessage();
       ctx.session.type = 'menu3';
       await ctx.reply(TG_MESSAGES.SELECT_ACTION, keyboard3());
       break;
