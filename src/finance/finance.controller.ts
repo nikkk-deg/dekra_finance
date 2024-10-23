@@ -154,15 +154,19 @@ export class FinanceController {
   @Action('change_cash')
   async handlerСhangeСash(ctx: Context) {
     ctx.deleteMessage();
-    ctx.session.type = 'menu5';
+    if (ctx.session.type === 'menu4') {
+      ctx.session.type = 'menu5';
+    } else if (ctx.session.type === 'menu14') {
+      ctx.session.type = 'menu15';
+    }
+
     await ctx.reply(TG_MESSAGES.ENTER_AMOUNT, keyboard_5_8_11_12_15());
   }
   @Action('change_non_cash')
   async handlerChangeNonCash(ctx: Context) {
-    await ctx.reply('че за хуйня?');
-    // ctx.deleteMessage();
-    // ctx.session.type = 'menu5';
-    // await ctx.reply(TG_MESSAGES.ENTER_AMOUNT, keyboard_5_8_11_12_15());
+    ctx.deleteMessage();
+    ctx.session.type = 'menu5';
+    await ctx.reply(TG_MESSAGES.ENTER_AMOUNT, keyboard_5_8_11_12_15());
   }
   @Action('plus')
   async handlerPlus(ctx: Context) {
@@ -199,7 +203,12 @@ export class FinanceController {
       case 'menu5': {
         ctx.deleteMessage();
         console.log(msg); //Запись в БД
-        ctx.session.type = 'menu6';
+        if (ctx.session.type === 'menu5') {
+          ctx.session.type = 'menu6';
+        } else if (ctx.session.type === 'menu15') {
+          ctx.session.type = 'menu16';
+        }
+
         await ctx.reply(TG_MESSAGES.SELECT_ACTION, keyboard_6_16());
         break;
       }

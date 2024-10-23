@@ -88,7 +88,7 @@ export const keyboard4 = () => {
           },
           {
             text: TG_BUTTONS.CHANGE_NON_CASH,
-            callback_data: 'change_balance',
+            callback_data: 'change_non_cash',
           },
         ],
         [
